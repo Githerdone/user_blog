@@ -13,8 +13,8 @@ gem 'thin'
 gem 'activesupport'
 gem 'activerecord'
 
-gem 'rake'
-
+gem 'rake', '10.0.3'
+gem 'bcrypt-ruby', '3.0.0'
 gem 'shotgun'
 
 group :test do
