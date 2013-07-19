@@ -11,9 +11,19 @@ class User < ActiveRecord::Base
     self.password_hash = @password
   end
 
-  def create
-    @user = User.new(params[:user])
+  def self.create(params)
+    @user = User.new(email: params[:email])
     @user.password = params[:password]
     @user.save!
+    @user
+  end
+
+  def self.login(params)
+    @user = User.find_by_email(params[:email])
+    if @user.password == params[:password]
+      @user
+    else
+      redirect '/'
+    end
   end
 end

@@ -8,10 +8,11 @@ class CreateTables < ActiveRecord::Migration
     create_table :posts do |t|
       t.string :title
       t.string :body
+      t.belongs_to :user
     end
 
     create_table :tags do |t|
-      t.string :word
+      t.string :tag
     end
 
     create_table :posts_tags do |t|
