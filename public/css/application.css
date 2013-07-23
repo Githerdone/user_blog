@@ -1,4 +1,4 @@
-.container {
+/*.container {
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
@@ -6,17 +6,23 @@
 }
 th {
   text-align: left;
+}*/
+
+.navbar-inner{
+    width: 100%;
 }
 
-.nav{
-    border:1px solid #ccc;
-    border-width:1px 0;
-    list-style:none;
-    margin:0;
-    padding:0;
-    text-align:left;
+#loginModal {
+  width: 290px;
+  top: 100px;
 }
-.nav li{
+
+.modal-header {
+  border-bottom: 2px solid #980000 !important;
+}
+
+
+/*.nav li{
     display:inline;
 }
 .nav a{
@@ -40,3 +46,4 @@ span {
   font-weight: bold;
   color: black;
 }
+*/
