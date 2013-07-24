@@ -20,10 +20,10 @@ class User < ActiveRecord::Base
 
   def self.login(params)
     @user = User.find_by_email(params[:email])
-    if @user.password == params[:password]
-      @user
+    if @user
+      @user if @user.password == params[:password]
     else
-      redirect '/'
+      false      
     end
   end
 end

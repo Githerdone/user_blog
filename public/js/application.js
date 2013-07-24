@@ -1,51 +1,36 @@
-$(document).ready(function() {
-  //This is to keep loginmodal window centered after adjusting width.
-  
-
+$(document).ready(function() {  
   
   $('#login_li').on('click', function(){
+     reset_login();
     $("#loginModal").modal('show');
+  
+    $('#login').on('submit', function(event){
+      event.preventDefault();
+
+      var form_input = $(this).serializeArray();
+
+      $.post('/login', form_input).done(function(response){
+        if (response.user == false){
+          unverified_user();
+          setTimeout(function(){reset_login()}, 1500);
+        }else{
+          reset_login();
+          $("#loginModal").modal('hide');
+          location.reload();
+        }
+      });
+    });
   });
-
-
-
-
-
-
-
-
-
-
-
-
-$('#loginModal .modal-footer button').on('click', function(event){
-  event.preventDefault();
-  if (!validate_email($('#login [name="email"]').val())){
-    $('[for="email"]').append(render_error("email"))
-  }
-  $('#login input').focus(function(){
-    console.log(this)
-    $('[for="email"]').remove('span');
-  })
 });
 
-
-
-
-});
-
-
-function validate_email(email){
-  var emailRegex = new RegExp(/^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$/i);
-  return emailRegex.test(email);
+function reset_login(){
+  $('#email').focus();
+  $('.modal-footer button').removeClass('btn-danger').addClass('btn-inverse');
+  $('.modal-footer button').text('Login');
+  $("#login")[0].reset();
 }
 
-function render_error(item){
-  return '<span style="color: red"> - ' + item + ' incorrect format</span>'
-}
-
-
-function modal_render(modal_id){
-  $( modal_id + ' button').attr("disabled","disabled");
-  $( modal_id + ' button').text('Fill in Form');
+function unverified_user(){
+  $('.modal-footer button').removeClass('btn-inverse').addClass('btn-danger');
+  $('.modal-footer button').text('- email or password incorrect -');
 }

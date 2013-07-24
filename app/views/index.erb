@@ -2,31 +2,14 @@
 
 <div class="container-fluid">
   <div class'row-fluid'>
-    <header class='span12 hero-unit'>
+    <header class='span2 hero-unit'>
       <h1>Welcome to Bloggerton Blog</h1>
     </header>
-    <% if current_user %>
-    <p>You are now logged in as: <span><%= user %></span></p>
-    <form class='hero-unit' name='create_post' method='post' action='/create_post'>
-      <button>Submit</button><br>
-      <input type='hidden' name='id' value='<%= current_user %>'>
-      <input type='text' name='title' placeholder='Title'><br>
-      <input type='text' name='tags' placeholder='Tag It!'><br>
-      <textarea name='body' cols='60' rows='5'></textarea>
-    </form>
-    <%end%>
-    <p>Here are the latest posts</p>
-    <% if @posts %>
-    
-    <% @posts.each do |post| %>
-    <div id='posts'>
-      <p><span id='post_text'>Title: </span><%= post.title %></p>
-      <p><span id='post_text'>Post: </span><%= post.body %></p>
-    </div><br>
-    <%end%>
-    <%end%>
+  </div>
+  <div class="span10">hello
   </div>
 </div>
+
 
 
 <div id='loginModal' style='display: none' class="modal hide fade">
@@ -36,14 +19,37 @@
   <div class="modal-body">
     <form id='login' method='post' action='/login'>
       <fieldset>
-        <label for='email'>e-mail</label><span></span>
+        <label for='email'>e-mail<span></span></label>
     <input id='email' type='email' name='email' placeholder='e-mail' required>
-    <label>Password</label>
-    <input id='password' type='text' name='password' placeholder='password' required>
-    <label id='radio' class="checkbox"><input type="checkbox">Keep me logged in</label>
+    <label for='password'>Password<span></span></label>
+    <input id='password' type='password' name='password' placeholder='password' required>
+    <label id='radio' class="checkbox"><input type="checkbox" name='keep_logged'>Keep me logged in</label>
+    <span id='user_false'></span>
   </div>
   <div class="modal-footer">
     <button class="btn btn-block btn-inverse" type="submit">Login</button>
+  </form>
+  </div>
+</div>
 
+<div id='createModal' style='display: none' class="modal hide fade">
+  <div class="modal-header">
+    <h3>Create New User</h3>
+  </div>
+  <div class="modal-body">
+    <form id='new_user' method='post' action='/new_user'>
+      <fieldset>
+        <label for='email'>e-mail<span></span></label>
+    <input id='email' type='email' name='email' placeholder='e-mail' required>
+    <label for='password'>Create Password<span></span></label>
+    <input id='password' type='password' name='password' placeholder='password' required>
+    <label for='verify_password'>Verify Password<span></span></label>
+    <input id='verify_password' type='password' name='password' placeholder='password' required>
+    <label id='radio' class="checkbox"><input type="checkbox" name='keep_logged'>Keep me logged in</label>
+    <span id='user_false'></span>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-block btn-inverse" type="submit">Login</button>
+  </form>
   </div>
 </div>

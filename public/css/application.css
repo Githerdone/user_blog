@@ -6,19 +6,30 @@
 }
 th {
   text-align: left;
-}*/
+  }*/
 
 .navbar-inner{
-    width: 100%;
+  width: 100%;
 }
 
-#loginModal {
+#loginModal, #createModal {
   width: 290px;
   top: 100px;
 }
 
 .modal-header {
   border-bottom: 2px solid #980000 !important;
+}
+
+#user {
+  color: white;
+  text-align: center;
+  margin-top: 11px;
+  margin-left: 33px;
+}
+
+#user span {
+  color: #CC66CC;
 }
 
 

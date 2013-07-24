@@ -2,7 +2,6 @@ enable :sessions
 
 get '/' do
   @posts = Post.all
-  p @posts
   erb :index
 end
 
@@ -11,21 +10,23 @@ get '/login' do
 end
 
 post '/login' do
+  p params
   user = User.login(params)
-  session[:id] = user.id
-  session[:email] = user.email
-  redirect '/'
+  if user
+    session[:id] = user.id
+    session[:email] = user.email
+  else
+    content_type :json
+    { user: false }.to_json
+  end
 end
 
-get '/create_account' do
-  erb :create_account
-end
 
-post '/create_account' do
+post '/new_user' do
   user = User.create(params)
   session[:id] = user.id
   session[:email] = user.email
-  redirect '/'
+  erb :index
 end
 
 get '/logout' do
