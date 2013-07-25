@@ -18,12 +18,13 @@
       <li class="active"><a href="/">Home</a></li>
       <% if current_user %>
         <li><a href="/logout">logout</a></li>
-        <li id='user'>Logged in as: <span><%= user %></span></li>
+        <ul id='user_ul'>
+          <li id='user'>Logged in as: <span><%= user %></span></li>
+        </ul>
       <% else %>
         <li><a id="login_li" href="#" role="button" data-toggle='modal'>Login</a></li>
         <li><a id="create_li" href="#">Create Account</a></li>
       <%end%>
-        
     </ul>
   </div>
 </div>

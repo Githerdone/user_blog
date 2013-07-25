@@ -1,7 +1,8 @@
 html {
   width: 90%;
   position: relative;
-  left: 5%;
+  left: 2%;
+  min-width: 900px;
 }
 
 #loginModal, #createModal {
@@ -20,9 +21,14 @@ html {
   margin-left: 33px;
 }
 
+#user_ul {
+  float: right;
+}
+
 #user span {
   color: #CC66CC;
 }
+
 #header {
   margin-left: 0px;
   position: relative;
@@ -38,13 +44,17 @@ html {
 }
 
 #left_col {
-  background-color: blue;
+  background-color: rgba(136,136,136,.4);
   border-radius: 6px;
   width: 30%;
   height: 800px;
-    display: inline-block;
+  display: inline-block;
 }
 
 #right_col {
-
+  background-color: rgba(136,136,136,.2);
+  border-radius: 6px;
+  display: inline-block;
+  width: 67%;
+  height: 800px;
 }
