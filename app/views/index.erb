@@ -1,16 +1,17 @@
-
+<header class='span9 hero-unit' id='header'>
+  <h1>Welcome to Bloggerton Blog</h1>
+</header>
 
 <div class="container-fluid">
-  <div class'row-fluid'>
-    <header class='span2 hero-unit'>
-      <h1>Welcome to Bloggerton Blog</h1>
-    </header>
-  </div>
-  <div class="span10">hello
+  <div class="row-fluid">
+    <div class="span2" id='left_col'>
+      stuff goes here
+    </div>
+    <div class="span10" id='right_col'>
+      stuff here as well
+    </div>
   </div>
 </div>
-
-
 
 <div id='loginModal' style='display: none' class="modal hide fade">
   <div class="modal-header">
@@ -20,36 +21,36 @@
     <form id='login' method='post' action='/login'>
       <fieldset>
         <label for='email'>e-mail<span></span></label>
-    <input id='email' type='email' name='email' placeholder='e-mail' required>
-    <label for='password'>Password<span></span></label>
-    <input id='password' type='password' name='password' placeholder='password' required>
-    <label id='radio' class="checkbox"><input type="checkbox" name='keep_logged'>Keep me logged in</label>
-    <span id='user_false'></span>
+        <input id='email' type='email' name='email' placeholder='e-mail' required>
+        <label for='password'>Password<span></span></label>
+        <input id='password' type='password' name='password' placeholder='password' required>
+        <label id='radio' class="checkbox"><input type="checkbox" name='keep_logged'>Keep me logged in</label>
+        <span id='user_false'></span>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-block btn-inverse" type="submit">Login</button>
+      </form>
+    </div>
   </div>
-  <div class="modal-footer">
-    <button class="btn btn-block btn-inverse" type="submit">Login</button>
-  </form>
-  </div>
-</div>
 
-<div id='createModal' style='display: none' class="modal hide fade">
-  <div class="modal-header">
-    <h3>Create New User</h3>
-  </div>
-  <div class="modal-body">
-    <form id='new_user' method='post' action='/new_user'>
-      <fieldset>
-        <label for='email'>e-mail<span></span></label>
-    <input id='email' type='email' name='email' placeholder='e-mail' required>
-    <label for='password'>Create Password<span></span></label>
-    <input id='password' type='password' name='password' placeholder='password' required>
-    <label for='verify_password'>Verify Password<span></span></label>
-    <input id='verify_password' type='password' name='password' placeholder='password' required>
-    <label id='radio' class="checkbox"><input type="checkbox" name='keep_logged'>Keep me logged in</label>
-    <span id='user_false'></span>
-  </div>
-  <div class="modal-footer">
-    <button class="btn btn-block btn-inverse" type="submit">Login</button>
-  </form>
-  </div>
-</div>
+  <div id='createModal' style='display: none' class="modal hide fade">
+    <div class="modal-header">
+      <h3>Create New User</h3>
+    </div>
+    <div class="modal-body">
+      <form id='new_user' method='post' action='/new_user'>
+        <fieldset>
+          <label for='email'>e-mail<span></span></label>
+          <input id='email' type='email' name='email' placeholder='e-mail' required>
+          <label for='password'>Create Password<span></span></label>
+          <input id='password' type='password' name='password' placeholder='password' required>
+          <label for='verify_password'>Verify Password<span></span></label>
+          <input id='verify_password' type='password' name='password' placeholder='password' required>
+          <label id='radio' class="checkbox"><input type="checkbox" name='keep_logged'>Keep me logged in</label>
+          <span id='user_false'></span>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-block btn-inverse" type="submit">Login</button>
+        </form>
+      </div>
+    </div>

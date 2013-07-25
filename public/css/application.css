@@ -1,15 +1,7 @@
-/*.container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
-}
-th {
-  text-align: left;
-  }*/
-
-.navbar-inner{
-  width: 100%;
+html {
+  width: 90%;
+  position: relative;
+  left: 5%;
 }
 
 #loginModal, #createModal {
@@ -31,30 +23,28 @@ th {
 #user span {
   color: #CC66CC;
 }
-
-
-/*.nav li{
-    display:inline;
-}
-.nav a{
-    display:inline-block;
-    padding:10px;
+#header {
+  margin-left: 0px;
+  position: relative;
+  left: 4.5%;
+  margin-bottom: 15px;
 }
 
-#posts {
-  width: 90%;
-  background-color: rgba(64,64,64,0.4);
-  border-radius: 10px;
-  padding: 10px;
-
+#header h1 {
+  font-size: 52px;
+  height: 0px;
+  margin: -24px;
+  text-align: center;
 }
 
-span {
-  color: blue;
+#left_col {
+  background-color: blue;
+  border-radius: 6px;
+  width: 30%;
+  height: 800px;
+    display: inline-block;
 }
 
-#post_text {
-  font-weight: bold;
-  color: black;
+#right_col {
+
 }
-*/
